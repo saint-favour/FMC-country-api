@@ -40,8 +40,12 @@
     <div class="search-sector">
       <div class="search-container">
         <div class="two">
-          <input type="search" id="search-input" placeholder="search for a Country..." />
-          <button type="button" id="search-btn">search</button>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="search for a Country..."
+          />
+          <!-- <button type="button" id="search-btn">search</button> -->
         </div>
 
         <div class="selection">
@@ -52,7 +56,7 @@
                 <i class="fa-solid fa-caret-down"></i>
               </div>
               <ul class="dropdown">
-                <li><a href="#" class="region-link">Africa</a></li>
+                <li><a href="#" class="region-link" id="africa">Africa</a></li>
                 <li><a href="#" class="region-link">America</a></li>
                 <li><a href="#" class="region-link">Asia</a></li>
                 <li><a href="#" class="region-link">Europe</a></li>
@@ -66,83 +70,89 @@
 
     <!-- main content -->
     <div>
-      <main class="gird-container">
-        <div class="card">
-          <div id="flag-image"></div>
-          <h3 id="country-name"><b></b></h3>
-          <ul>
-            <li id="country-population"><span></span></li>
-            <li id="country-region"><span></span></li>
-            <li id="country-capital"><span></span></li>
+      <main class="gird-container" data-user-cards-container>
+        <template data-user-template>
+          <div class="card">
+            <div data-flag></div>
+             <h3 data-name></h3>
+              <ul>
+            <li data-population></li>
+            <li data-region></li>
+            <li data-capital></li>
           </ul>
-        </div>
-        <div class="card">
-          <img src="download.png" alt="nigeria-flag">
-          <h3><b>Germany</b></h3>
-          <ul>
-            <li><span>population:</span> 81,770,900</li>
-            <li><span>Region:</span>Europe</li>
-            <li><span>Capital</span> Berlin</li>
-          </ul>
-        </div>
-        <div class="card">
-          <img src="download.png" alt="nigeria-flag">
-          <h3><b>Germany</b></h3>
-          <ul>
-            <li><span>population:</span> 81,770,900</li>
-            <li><span>Region:</span>Europe</li>
-            <li><span>Capital</span> Berlin</li>
-          </ul>
-        </div>
-        <div class="card">
-          <img src="download.png" alt="nigeria-flag">
-          <h3><b>Germany</b></h3>
-          <ul>
-            <li><span>population:</span> 81,770,900</li>
-            <li><span>Region:</span>Europe</li>
-            <li><span>Capital</span> Berlin</li>
-          </ul>
-        </div>
-        <div class="card">
-          <img src="download.png" alt="nigeria-flag">
-          <h3><b>Germany</b></h3>
-          <ul>
-            <li><span>population:</span> 81,770,900</li>
-            <li><span>Region:</span>Europe</li>
-            <li><span>Capital</span> Berlin</li>
-          </ul>
-        </div>
-        <div class="card">
-          <img src="download.png" alt="nigeria-flag">
-          <h3><b>Germany</b></h3>
-          <ul>
-            <li><span>population:</span> 81,770,900</li>
-            <li><span>Region:</span>Europe</li>
-            <li><span>Capital</span> Berlin</li>
-          </ul>
-        </div>
-        <div class="card">
-          <img src="download.png" alt="nigeria-flag">
-          <h3><b>Germany</b></h3>
-          <ul>
-            <li><span>population:</span> 81,770,900</li>
-            <li><span>Region:</span>Europe</li>
-            <li><span>Capital</span> Berlin</li>
-          </ul>
-        </div>
-        <div class="card">
-          <img src="download.png" alt="nigeria-flag">
-          <h3><b>Germany</b></h3>
-          <ul>
-            <li><span>population:</span> 81,770,900</li>
-            <li><span>Region:</span>Europe</li>
-            <li><span>Capital</span> Berlin</li>
-          </ul>
-        </div>
-            </main>
+          </div>
+        </template>
+      </main>
     </div>
 
     <!-- script tag -->
-     <script src="main.js"></script>
+    <script src="main.js"></script>
+
+
+<!-- <div class="card">
+          <img src="download.png" alt="nigeria-flag" />
+          <h3><b>Germany</b></h3>
+          <ul>
+            <li><span>population:</span> 81,770,900</li>
+            <li><span>Region:</span>Europe</li>
+            <li><span>Capital</span> Berlin</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="download.png" alt="nigeria-flag" />
+          <h3><b>Russia</b></h3>
+          <ul>
+            <li><span>population:</span> 81,770,900</li>
+            <li><span>Region:</span>Europe</li>
+            <li><span>Capital</span> Berlin</li>
+          </ul>
+        </div>
+        <div class="card cd1">
+          <img src="download.png" alt="nigeria-flag" />
+          <h3><b>Germany</b></h3>
+          <ul>
+            <li><span>population:</span> 81,770,900</li>
+            <li><span>Region:</span>Europe</li>
+            <li><span>Capital</span> Berlin</li>
+          </ul>
+        </div>
+        <div class="card cd1">
+          <img src="download.png" alt="nigeria-flag" />
+          <h3><b>Germany</b></h3>
+          <ul>
+            <li><span>population:</span> 81,770,900</li>
+            <li><span>Region:</span>Europe</li>
+            <li><span>Capital</span> Berlin</li>
+          </ul>
+        </div>
+        <div class="card cd1">
+          <img src="download.png" alt="nigeria-flag" />
+          <h3><b>Germany</b></h3>
+          <ul>
+            <li><span>population:</span> 81,770,900</li>
+            <li><span>Region:</span>Europe</li>
+            <li><span>Capital</span> Berlin</li>
+          </ul>
+        </div>
+        <div class="card cd1">
+          <img src="download.png" alt="nigeria-flag" />
+          <h3><b>Germany</b></h3>
+          <ul>
+            <li><span>population:</span> 81,770,900</li>
+            <li><span>Region:</span>Europe</li>
+            <li><span>Capital</span> Berlin</li>
+          </ul>
+        </div>
+        <div class="card cd1">
+          <img src="download.png" alt="nigeria-flag" />
+          <h3><b>Germany</b></h3>
+          <ul>
+            <li><span>population:</span> 81,770,900</li>
+            <li><span>Region:</span>Europe</li>
+            <li><span>Capital</span> Berlin</li>
+          </ul>
+        </div> -->
+
+
   </body>
 </html>

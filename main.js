@@ -3,61 +3,76 @@ const card = document.querySelectorAll(".card");
 const dropDown = document.querySelector(".dropdown");
 const Body = document.querySelector("body");
 
-darkMode.addEventListener('click', () => {
-    // darkMode.classList.toggle('active');
-    // card.classList.toggle("active-link");
-    Body.classList.toggle('active');
-    dropDown.classList.toggle("active-link"); 
-})
 
-// general 
+darkMode.addEventListener("click", () => {
+  // darkMode.classList.toggle('active');
+  // card.classList.toggle("active-link");
+  Body.classList.toggle("active");
+  dropDown.classList.toggle("active-link");
+});
+
+// general
 // search input DOM-manipulation
 const searchInput = document.querySelector("#search-input");
-const flagImage = document.querySelector("#flag-image");
-const countryName = document.querySelector("#country-name");
-const countryPopulation = document.querySelector("#country-population");
-const countryRegion = document.querySelector("#country-region");
-const countryCapital = document.querySelector("#country-capital");
-const searchButton = document.querySelector("#search-btn");
+const container = document.querySelector("#countries-card");
+const userCardTemplate = document.querySelector("[data-user-template]");
+const userCardContainer = document.querySelector("[data-user-cards-container]");
+const regionAfrica = document.querySelector("africa");
+
+let users = []
+
+
+// search for country
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase()
+
+  users.forEach(user => {
+    const isVisible = user.name.toLowerCase().includes(value)
+    user.element.classList.toggle("hide", !isVisible);
+
+  })
+});
+
+
 
 
 
 // get country from API
-const getCountry = async () => {
-    try {
-        const countriesName = searchInput.value.toLowerCase()
-        const res = await fetch(
-          `https://restcountries.com/v3.1/name/${countriesName}`
-        );
-        const data = await res.json();
-        setCountryInfo(data);
-    } catch (err) {
-        alert('country not found')
-    }
-};
+  fetch(`https://restcountries.com/v3.1/all`)
+    .then((res) => res.json())
+    .then((data) => {
+     users = data.map(user => {
+        const card = userCardTemplate.content.cloneNode(true).children[0]
+        const dataFlag = card.querySelector("[data-flag]")
+        const countryName = card.querySelector("[data-name]")
+        const countryPopulation = card.querySelector("[data-population]");
+        const countryRegion = card.querySelector("[data-region]");
+        const countryCapital = card.querySelector("[data-capital]");
 
-// get data from API
-const setCountryInfo = data => {
-    const {name, tld, idd, capital, maps, population, flag} = data;
+        dataFlag.innerHTML = `<img src="${user.flags.png}" alt="${user.name.common}">`;
+        countryName.textContent = user.name.common
+        countryPopulation.textContent = `Population: ${user.population}`;
+        countryRegion.textContent = `Region: ${user.region}`;
+        countryCapital.textContent = `Capital: ${user.capital}`;
 
-    flagImage.innerHTML = `<img src="${flag}" alt="${name}"`;
+        userCardContainer.append(card)
+        return { name: user.name.common, element: card};
 
-    countryName.textContent = `${name[0].toUpperCase() + name.slice(1)}`
+        // console.log(user)
+      })
+    });
 
-    countryPopulation.textContent = `population: ${population}`;
-    countryRegion.textContent = `Region: ${population}`;
-    countryCapital.textContent = `Capital: ${population}`;
+    // don't forget this region: user.region,
 
-}
+// filter by regions 
 
-//search for country
-searchButton.addEventListener("click", () => {
-  getCountry();
-});
-//fetch country 
-
-//display of country 
+//AFRICA 
 
 
-//
 
+//fetch country
+
+//display of country
+
+
+// displayCountries(data)
