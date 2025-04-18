@@ -17,9 +17,31 @@ const searchInput = document.querySelector("#search-input");
 const container = document.querySelector("#countries-card");
 const userCardTemplate = document.querySelector("[data-user-template]");
 const userCardContainer = document.querySelector("[data-user-cards-container]");
-const regionAfrica = document.querySelector("africa");
+
+//dropdown filter
+const filterBtn = document.querySelectorAll(".dropdown button");
 
 let users = []
+
+const filterCountry = e => {
+  document.querySelector(".active-select").classList.remove("active-select");
+  e.target.classList.add("active-select")
+  console.log(e.target)
+  // console.log(user.element.dataset.regions);
+  // iteration
+  //  let value = e.target.value.toLowerCase()
+  //  console.log(region.value);
+   users.forEach(user => {
+    if (user.element.dataset.regions === user.region) {
+      user.element.classList.remove("hide");
+    } else {
+      user.element.classList.add("hide");
+    }
+  })
+}
+
+//event listener to each filter list button 
+filterBtn.forEach((btnItem) => btnItem.addEventListener("click", filterCountry ));
 
 
 // search for country
@@ -56,7 +78,7 @@ searchInput.addEventListener("input", (e) => {
         countryCapital.textContent = `Capital: ${user.capital}`;
 
         userCardContainer.append(card)
-        return { name: user.name.common, element: card};
+        return { name: user.name.common, region: user.region, element: card};
 
         // console.log(user)
       })

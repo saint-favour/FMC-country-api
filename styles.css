@@ -107,13 +107,15 @@ input:placeholder-shown{
     
 }
 
-.selection ul li a{
+.selection ul li button{
     display: block;
     border: none;
     padding: 5px 0px 5px 25px;
     color: black;
     text-decoration: none;
     text-align: start;
+    font-weight: 900px;
+    font-size: medium;
 }
 
 
@@ -132,8 +134,16 @@ input:placeholder-shown{
     display: none;
 }
 
-.selection ul li a:hover{
-box-shadow: 2px 0px 10px rgba(128, 128, 128, 0.178);
+
+.selection ul li button:hover{
+ box-shadow: 2px 0px 10px rgba(128, 128, 128, 0.178);
+ width: 20rem;
+ cursor: pointer;
+}
+
+.selection ul li button{
+border: none;
+background-color: #fff;
 }
 
 .selection ul li:hover ul.dropdown{
@@ -157,6 +167,15 @@ box-shadow: 2px 0px 10px rgba(128, 128, 128, 0.178);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.card:hover{
+   cursor: pointer;
+   transform: scale(105%);
+   -webkit-transform: scale(105%);
+   -moz-transform: scale(105%);
+   -ms-transform: scale(105%);
+   -o-transform: scale(105%);
 }
 
 img{
@@ -243,4 +262,7 @@ img{
     display: none;
 }
 
+.close{
+    display: none;
+}
 
