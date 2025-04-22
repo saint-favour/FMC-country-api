@@ -48,7 +48,7 @@
           <!-- <button type="button" id="search-btn">search</button> -->
         </div>
 
-        <div class="selection">
+        <!-- <div class="selection">
           <ul>
             <li>
               <div>
@@ -57,34 +57,33 @@
               </div>
               <ul class="dropdown">
                 <li>
-                  <button class="active-select" data-regions="africa">Africa</button>
+                  <button class="active-select" data-regions="africa">
+                    Africa
+                  </button>
                 </li>
                 <li><button data-regions="America">America</button></li>
                 <li><button data-regions="Asia">Asia</button></li>
-                <li><button  data-regions="Europe">Europe</button></li>
-                <li><button  data-regions="Oceania">Oceania</button></li>
+                <li><button data-regions="Europe">Europe</button></li>
+                <li><button data-regions="Oceania">Oceania</button></li>
               </ul>
             </li>
           </ul>
-        </div>
+        </div> -->
+
+        <select id="regions">
+          <option value="">Filter by Region</option>
+          <option value="africa">Africa</option>
+          <option value="america">America</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
       </div>
     </div>
 
     <!-- main content -->
     <div>
-      <main class="gird-container" data-user-cards-container>
-        <template data-user-template>
-          <div class="card">
-            <div data-flag></div>
-            <h3 data-name></h3>
-            <ul>
-              <li data-population></li>
-              <li data-region></li>
-              <li data-capital></li>
-            </ul>
-          </div>
-        </template>
-      </main>
+      <main class="gird-container" data-user-cards-container></main>
     </div>
 
     <!-- script tag -->
