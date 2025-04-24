@@ -56,9 +56,18 @@ function displayCountries(countries) {
     population.textContent = `Population: ${country.population}`;
     capital.textContent = `Capital: ${country.capital}`;
     domain.textContent = `Top Level Domain: ${country.tld}`;
-    borderBtn1.textContent = country.borders[0];
-    borderBtn2.textContent = country.borders[1];
-    borderBtn3.textContent = country.borders[2];
+    subRegion.textContent = `Sub Region: ${country.subregion}`;
+
+    if ("borders" in country) {
+      borderBtn1.textContent = country.borders[0];
+      borderBtn2.textContent = country.borders[1];
+      borderBtn3.textContent = country.borders[2];
+    }
+    else{
+      borderBtn1.textContent = 'No border';
+      borderBtn2.textContent = "No border";
+      borderBtn3.textContent = "No border";
+    }
     
     
     // for countries using objects. figured it out 
