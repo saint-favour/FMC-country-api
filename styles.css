@@ -238,7 +238,7 @@ input:placeholder-shown {
   flex-wrap: wrap;
 }
 
-.info-card{
+.info-card {
   display: flex;
   justify-content: space-between;
   gap: 4rem;
@@ -257,19 +257,17 @@ input:placeholder-shown {
   font-size: medium;
 }
 
-.info-name{
-    font-weight: bolder;
-    padding-top: 4rem;
+.info-name {
+  font-weight: bolder;
+  padding-top: 4rem;
 }
-
 
 .countries-border {
   display: flex;
   align-items: center;
- 
 }
 
-.border-countries{
+.border-countries {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
@@ -292,9 +290,9 @@ input:placeholder-shown {
     justify-content: start;
   }
 
-    #back-btn {
-  margin-inline-start: 0rem;
-}
+  #back-btn {
+    margin-inline-start: 0rem;
+  }
 
   /* dropdown  */
 
@@ -319,10 +317,9 @@ input:placeholder-shown {
     width: 25.5rem;
   }
 
-   .all-parent{
- padding-left: 2.3rem;
-}
-
+  .all-parent {
+    padding-left: 2.3rem;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -339,8 +336,8 @@ input:placeholder-shown {
   }
 
   #back-btn {
-  margin-inline-start: 0rem;
-}
+    margin-inline-start: 0rem;
+  }
 
   .selection ul li div {
     min-height: 4rem;
@@ -351,14 +348,10 @@ input:placeholder-shown {
   }
 
   .img2 {
-  width: 20rem;
-   height: 14.5rem;
-
+    width: 20rem;
+    height: 14.5rem;
+  }
 }
- 
-
-}
-
 
 .hide {
   display: none;
