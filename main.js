@@ -61,7 +61,7 @@ function displayCountries(countries) {
     const listItem2 = document.createElement("li");
     const listItem3 = document.createElement("li");
 
-    flag.innerHTML = `<img src="${country.flags.png}" alt="${country.name.common}">`;
+    flag.innerHTML = `<img src="${country.flags.png}" alt="${country.name.common}" class="img1">`;
     name.textContent = country.name.common;
     listItem1.textContent = `Population: ${country.population}`;
     listItem2.textContent = `Region: ${country.region}`;
