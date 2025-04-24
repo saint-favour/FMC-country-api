@@ -21,6 +21,9 @@ const domain = document.querySelector("#country-domain");
 const currency = document.querySelector("#country-currency");                   
 const language = document.querySelector("#country-lang");                   
 const flag = document.querySelector("#image-dedicated");                   
+const borderBtn1 = document.querySelector(".b-btn1");                   
+const borderBtn2 = document.querySelector(".b-btn2");                   
+const borderBtn3 = document.querySelector(".b-btn3");                   
 
 
 // get the country name from the url as search params
@@ -48,13 +51,25 @@ function fetchCountry() {
 function displayCountries(countries) {
   countries.forEach((country) => {
     
-    flag.innerHTML = `<img src="${country.flags.png}" alt="${country.name.common}"  class="img2">`;
+    flag.innerHTML = `<img  class="img2" src="${country.flags.png}" alt="${country.name.common}" />`;
     infoName.textContent = country.name.common;
-    nativeName.textContent = `Native Name: ${country.name.nativeName[0]}`;
     population.textContent = `Population: ${country.population}`;
     capital.textContent = `Capital: ${country.capital}`;
-    domain.textContent = `Top Level Domain: ${country.domain}`;
-    currency.textContent = `Currency: ${country.currencies.name}`;
-    language.textContent = `Languages: ${country.languages.eng}`;
+    domain.textContent = `Top Level Domain: ${country.tld}`;
+    borderBtn1.textContent = country.borders[0];
+    borderBtn2.textContent = country.borders[1];
+    borderBtn3.textContent = country.borders[2];
+    
+    
+    // for countries using objects. figured it out 
+    Object.keys(country.currencies).forEach((key) => {
+      currency.textContent = `Currency: ${country.currencies[key].name}`;
+    });
+    Object.keys(country.name.nativeName).forEach((key) => {
+     nativeName.textContent = `Native Name: ${country.name.nativeName[key].official}`;
+    });
+    Object.keys(country.languages).forEach((key) => {
+     language.textContent = `Languages: ${country.languages[key]}`;
+    });
   })
 }
