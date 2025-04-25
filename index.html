@@ -17,14 +17,20 @@
     ></script>
   </head>
   <body>
+    <!-- if the comments are too long to read, hit Alt + Z on your keyboard to activate word wrapping, it should make it easier to read -->
+
     <!-- header -->
+    <!-- It's always a good idea to write as less markup as possible to get the job done, it could save you massive headache in the future and also to reduce the amount of data the browser is going to fetch for the page to be displayed -->
+    <!-- for instance this div wrapping the header isn't really needed considering the fact that the header is a block level element and the div itself is not acting as a width-regulating container of some sort, it's just extra markup that's not really needed -->
     <div>
       <header>
         <nav class="container">
+          <!-- same thing with the div here the h1 is enough for the styling you were trying to achieve -->
           <div class="one">
             <h1>Where in the world?</h1>
           </div>
 
+          <!-- same here the div isn't necessary -->
           <div class="dark-mode">
             <button class="btn1">
               <i class="fa-regular fa-moon" style="color: #000000"></i>
@@ -36,15 +42,17 @@
     </div>
 
     <!-- search section -->
-
+    <!-- this double div wrapper isn't necessary one wrapper is enough -->
     <div class="search-sector">
       <div class="search-container">
+        <!-- this div wrapping the input isn't necessary -->
         <div class="two">
           <input
             type="search"
             id="search-input"
-            placeholder="search for a Country..."
+            placeholder="Search for a country..."
           />
+          <!-- you can remove this comment since it's not really doing anything -->
           <!-- <button type="button" id="search-btn">search</button> -->
         </div>
 
@@ -73,7 +81,9 @@
         </div> -->
 
         <select id="regions">
-          <option value="">Filter by Region <i class="fa-solid fa-caret-down"></i></option>
+          <option value="">
+            Filter by Region <i class="fa-solid fa-caret-down"></i>
+          </option>
           <option value="africa">Africa</option>
           <option value="america">America</option>
           <option value="asia">Asia</option>

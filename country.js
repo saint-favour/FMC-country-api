@@ -65,6 +65,7 @@ function displayCountries(countries) {
       borderBtn3.textContent = "No border";
     }
 
+    // well done, this look nice
     // for countries using objects. figured it out
     Object.keys(country.currencies).forEach((key) => {
       currency.textContent = `Currency: ${country.currencies[key].name}`;
