@@ -11,7 +11,7 @@ darkMode.addEventListener("click", () => {
   dropDown.classList.toggle("active-link");
 });
 
-// DOM manuplication
+// DOM manipulation
 const infoName = document.querySelector("#info-name");
 const nativeName = document.querySelector("#country-native");
 const population = document.querySelector("#country-population");
@@ -28,10 +28,11 @@ const borderBtn3 = document.querySelector(".b-btn3");
 // get the country name from the url as search params
 const countryName = window.location.search.split("=")[1];
 
+let countries = [];
+
 // event listeners
 window.addEventListener("DOMContentLoaded", fetchCountry);
 
-let countries = [];
 // fetch the country info
 function fetchCountry() {
   fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)

@@ -17,6 +17,16 @@ a {
   color: inherit;
 }
 
+/* toggle class */
+
+.hide {
+  display: none;
+}
+
+.close {
+  display: none;
+}
+
 /* heading style  */
 
 header {
@@ -201,10 +211,6 @@ input:placeholder-shown {
 .card:hover {
   cursor: pointer;
   transform: scale(105%);
-  -webkit-transform: scale(105%);
-  -moz-transform: scale(105%);
-  -ms-transform: scale(105%);
-  -o-transform: scale(105%);
 }
 
 .img1 {
@@ -247,9 +253,6 @@ input:placeholder-shown {
 
 .card2 div div {
   padding-top: 1.5em;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-evenly; */
 }
 
 .info-card ul li {
@@ -271,7 +274,6 @@ input:placeholder-shown {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
-  /* flex-shrink: 1; */
 }
 
 .border-btn {
@@ -322,7 +324,7 @@ input:placeholder-shown {
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 412px) {
   h1 {
     font-size: 1rem;
   }
@@ -353,10 +355,3 @@ input:placeholder-shown {
   }
 }
 
-.hide {
-  display: none;
-}
-
-.close {
-  display: none;
-}
