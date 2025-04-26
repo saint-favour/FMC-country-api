@@ -3,7 +3,18 @@ const card = document.querySelectorAll(".card");
 const dropDown = document.querySelector(".dropdown");
 const Body = document.querySelector("body");
 
+/*
+VERY IMPORTANT: always follow certain patterns when naming variables and functions,
+the usual javascript conventions are:
+1. use camelCase for variable names and functions
+2. As you might have noticed in the freeCodeCamp course, when declaring static constants, you can use CAPITALIZED_SNAKE_CASE
+3. Use PascalCase for class names
+
+note that you can also use PascalCase or snake_case, it's your choice really, but once you pick a style stick to it
+*/
+
 darkMode.addEventListener("click", () => {
+  // get rid of unnecessary comments
   // darkMode.classList.toggle('active');
   // card.classList.toggle("active-link");
   Body.classList.toggle("active");
@@ -97,8 +108,8 @@ function filterByRegions(value) {
   displayCountries(filteredCountries);
 }
 
+// you can delete from here since it won't be used again
 // dedicated country pages
-
 /* 
 /////////////////////////////////////////////
 ////////////////////////////////////////////
