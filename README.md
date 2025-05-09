@@ -74,7 +74,7 @@ function fetchCountries() {
 ## Author
  Saint-favour Amaechi
  
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@saint-favour](https://www.frontendmentor.io/profile/saint-favour)
 - Twitter/X - [@saintAmaechi](https://x.com/SaintAmaechi) 
 
 ## Acknowledgments
